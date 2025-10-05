@@ -1,0 +1,588 @@
+/* ===================================
+   Manoj's Personal Website - CSS
+   Modern Professional Theme
+   =================================== */
+
+:root {
+  /* Color Palette */
+  --primary-color: #2563eb; /* Modern blue */
+  --secondary-color: #1e40af; /* Darker blue */
+  --accent-color: #3b82f6; /* Light blue */
+  --text-dark: #1f2937; /* Dark gray */
+  --text-light: #6b7280; /* Light gray */
+  --background: #ffffff; /* White */
+  --background-alt: #f8fafc; /* Light gray background */
+  --border-color: #e5e7eb; /* Border gray */
+  --success-color: #10b981; /* Green */
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --font-primary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-heading: "Georgia", serif;
+  --font-mono: "Consolas", "Monaco", monospace;
+}
+
+/* ===================================
+   Base Styles
+   =================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================================
+   Navigation Styles
+   =================================== */
+
+.navbar {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  padding: 1rem 0;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  margin: 0;
+  padding: 0 2rem;
+}
+
+.navbar .logo a {
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar .logo a:hover {
+  color: #dbeafe;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0 0 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar ul a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar ul a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.navbar ul a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #dbeafe;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar ul a:hover::after {
+  width: 100%;
+}
+
+/* ===================================
+   Main Content Styles
+   =================================== */
+
+main {
+  flex: 1;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.page-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 2px;
+}
+
+/* ===================================
+   Home Page Styles
+   =================================== */
+
+.home-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-image {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+.about-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+.about-text strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.about-text em {
+  color: var(--secondary-color);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* ===================================
+   Portfolio Styles
+   =================================== */
+
+.project {
+  background: var(--background);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin: 2rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.project img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project:hover img {
+  transform: scale(1.05);
+}
+
+.project-details {
+  padding: 2rem;
+  background: var(--background);
+}
+
+.project-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.project-details a {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.project-details a:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* ===================================
+   Resume Styles
+   =================================== */
+
+.resume {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.resume a[download] {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--success-color), #059669);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  margin: 0 auto 3rem auto;
+  display: block;
+  text-align: center;
+  max-width: 200px;
+  transition: all 0.3s ease;
+}
+
+.resume a[download]:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.section {
+  background: var(--background-alt);
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  padding: 2rem;
+  border-left: 4px solid var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.entry {
+  background: var(--background);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--accent-color);
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-title {
+  font-family: var(--font-heading);
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.entry-info {
+  color: var(--text-light);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.entry-description {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.skill-list,
+.course-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.5rem;
+}
+
+.skill-list li,
+.course-list li {
+  background: var(--background);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.skill-list li:hover,
+.course-list li:hover {
+  transform: translateX(5px);
+  background: #eff6ff;
+}
+
+/* ===================================
+   Contact Form Styles
+   =================================== */
+
+#contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: var(--background-alt);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+#contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+#contact-form input[type="submit"] {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 0;
+}
+
+#contact-form input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* ===================================
+   Blog Styles
+   =================================== */
+
+.blog-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.blog-content p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+/* ===================================
+   Footer Styles
+   =================================== */
+
+.footer {
+  background: linear-gradient(135deg, var(--text-dark), #374151);
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  main {
+    padding: 2rem 1rem;
+  }
+
+  .home-content {
+    gap: 1.5rem;
+  }
+
+  .project {
+    margin: 1rem 0;
+  }
+
+  .skill-list,
+  .course-list {
+    grid-template-columns: 1fr;
+  }
+
+  #contact-form {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .navbar .logo {
+    padding: 0 1rem;
+  }
+
+  .navbar .logo a {
+    font-size: 1.2rem;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .about-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ===================================
+   Animation and Transitions
+   =================================== */
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section,
+.project,
+#contact-form {
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* ===================================
+   Utility Classes
+   =================================== */
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.shadow {
+  box-shadow: var(--shadow);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
